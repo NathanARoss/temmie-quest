@@ -1,0 +1,54 @@
+html, body {
+	height: 100%;
+	margin: 0px;
+}
+
+body {
+	background-color: black;
+}
+
+input {
+	height: 100%;
+}
+
+#console-output {
+	color: white;
+	font-family: Monospace;
+	font-size: 16px;
+	padding: 10px 10px 60px 10px;
+	margin: 0;
+	white-space: pre-wrap;
+}
+
+#console-form {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 43px;
+	display: flex;
+	box-sizing: border-box;
+}
+
+#console-input, input[type="button"] {
+	flex-grow: 1;
+}
+
+#console-input, #console-submit, input[type="button"] {
+	background-color: #333333;
+	color: white;
+	font-family: Monospace;
+	font-size: 16px;
+	
+	border: none;
+	padding: 0 10px;
+	box-sizing: border-box;
+	margin: 2px;
+}
+
+label {
+	flex-grow: 1;
+	color: white;
+    display: flex;
+	align-items: center;
+	margin: 4px;
+}
