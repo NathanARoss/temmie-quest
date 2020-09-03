@@ -6,7 +6,8 @@ const form = document.getElementById("console-form");
 let msgResolver;
 let msgFormatter;
 
-function buttonResolver() {
+function buttonClickHandler() {
+    form.style.visibility = "hidden";
     inputNode.removeAttribute("hidden");
     submitNode.removeAttribute("hidden");
 
@@ -33,6 +34,7 @@ function readCheckboxes() {
 }
 
 function readString(placeholder="", required=false) {
+    form.style.visibility = "";
     inputNode.removeAttribute("disabled");
     inputNode.setAttribute("type", "text");
     inputNode.setAttribute("placeholder", placeholder);
@@ -48,6 +50,7 @@ function readString(placeholder="", required=false) {
 }
 
 function readNumber(placeholder="", min=-Infinity, max=Infinity, step="any") {
+    form.style.visibility = "";
     inputNode.removeAttribute("disabled");
     inputNode.setAttribute("type", "number");
     inputNode.setAttribute("placeholder", placeholder);
@@ -66,6 +69,7 @@ function readNumber(placeholder="", min=-Infinity, max=Infinity, step="any") {
 }
 
 function readNumberWithSlider(min, max, step="any") {
+    form.style.visibility = "";
     inputNode.removeAttribute("disabled");
     inputNode.setAttribute("type", "range");
     inputNode.setAttribute("min", min);
@@ -81,6 +85,7 @@ function readNumberWithSlider(min, max, step="any") {
 }
 
 function readCheckboxSelections(options) {
+    form.style.visibility = "";
     inputNode.setAttribute("hidden", "true");
 
     for (const option of options) {
@@ -103,6 +108,7 @@ function readCheckboxSelections(options) {
 }
 
 function readButtonSelection(options) {
+    form.style.visibility = "";
     inputNode.setAttribute("hidden", "true");
     submitNode.setAttribute("hidden", "true");
 
@@ -111,7 +117,7 @@ function readButtonSelection(options) {
         button.setAttribute("type", "button");
         button.setAttribute("value", option);
         button.innerText = option;
-        button.addEventListener("click", buttonResolver);
+        button.addEventListener("click", buttonClickHandler);
 
         form.insertBefore(button, submitNode);
     }
@@ -122,6 +128,7 @@ function readButtonSelection(options) {
 }
 
 function readColor(defaultColor) {
+    form.style.visibility = "";
     inputNode.removeAttribute("disabled");
     inputNode.setAttribute("type", "color");
     inputNode.setAttribute("value", defaultColor);
@@ -169,6 +176,7 @@ form.onsubmit = function() {
     inputNode.removeAttribute("required");
     inputNode.removeAttribute("hidden");
     inputNode.removeAttribute("pattern");
+    form.style.visibility = "hidden";
 
     if (msgResolver) {
         inputNode.value = "";
