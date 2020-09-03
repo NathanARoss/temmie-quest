@@ -27,28 +27,30 @@ input {
 	height: 43px;
 	display: flex;
 	box-sizing: border-box;
+	overflow-x: auto;
 }
 
-#console-input, input[type="button"] {
+#console-input, input[type="button"], label {
 	flex-grow: 1;
 }
 
-#console-input, #console-submit, input[type="button"] {
+#console-input, #console-submit, input[type="button"], label {
 	background-color: #333333;
 	color: white;
 	font-family: Monospace;
 	font-size: 16px;
 	
 	border: none;
-	padding: 0 10px;
-	box-sizing: border-box;
-	margin: 2px;
+	margin: 0 1px;
+}
+
+#console-submit {
+	flex-shrink: 0;
+	padding: 0 8px;
 }
 
 label {
-	flex-grow: 1;
-	color: white;
     display: flex;
 	align-items: center;
-	margin: 4px;
+    justify-content: center;
 }
