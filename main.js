@@ -50,7 +50,7 @@ async function main() {
 		println("You use your time traveling abilities to try again.");
 	}
 	
-	println("\nYou approach the Temmie Shrine.");
+	println("\nYou approach the Temmie Temple.");
 	
 	hasPrayed = false;
 	while (!hasPrayed) {
